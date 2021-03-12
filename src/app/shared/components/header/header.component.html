@@ -26,7 +26,11 @@
             <mat-icon>person_outline</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item (click)="login()" *ngIf="!loggedIn">
+              <mat-icon>exit_to_app</mat-icon>
+              Sign In
+            </button>
+            <button mat-menu-item (click)="logout()" *ngIf="loggedIn">
               <mat-icon>exit_to_app</mat-icon>
               Sign Out
             </button>
